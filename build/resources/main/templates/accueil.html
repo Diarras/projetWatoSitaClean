@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            height: 100%;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+<header class="text-center my-4">
+    <img src="/images/logo.png" alt="Logo de l'association" style="max-height: 100px;">
+</header>
+
+<main class="container">
+    <div class="row g-4">
+
+        <!-- Bloc 1 : Nos Actions -->
+        <div class="col-12 col-md-6">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">💡 Mes Actions</h5>
+                    <div class="accordion" id="accordionActions">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingActions">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseActions">
+                                    Voir les sous-rubriques
+                                </button>
+                            </h2>
+                            <div id="collapseActions" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><a th:href="@{/nos-actions/education}">🎓 Éducation</a></li>
+                                        <li><a th:href="@{/nos-actions/sante}">🩺 Santé</a></li>
+                                        <li><a th:href="@{/nos-actions/egalite}">⚖️ Égalité</a></li>
+                                        <li><a th:href="@{/don}">💝 Faire un don</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloc 2 : Actualités -->
+        <div class="col-12 col-md-6">
+            <div class="card border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">📰 Actualités</h5>
+                    <div class="accordion" id="accordionActus">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingActus">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseActus">
+                                    Voir les sous-rubriques
+                                </button>
+                            </h2>
+                            <div id="collapseActus" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><a th:href="@{/actualites/interviews}">🎤 Interviews</a></li>
+                                        <li><a th:href="@{/actualites/portraits}">🧑‍🎨 Portraits</a></li>
+                                        <li><a th:href="@{/actualites/bilans}">📊 Bilans d’ateliers</a></li>
+                                        <li><a th:href="@{/don}">💝 Faire un don</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--        &lt;!&ndash; Bloc 3 : Partenaire &ndash;&gt;-->
+<!--        <div class="col-12 col-md-6">-->
+<!--            <div class="card border-warning">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title text-warning">🤝 Devenir partenaire</h5>-->
+<!--                    <div class="accordion" id="accordionPartenaire">-->
+<!--                        <div class="accordion-item">-->
+<!--                            <h2 class="accordion-header" id="headingPartenaire">-->
+<!--                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePartenaire">-->
+<!--                                    En savoir plus-->
+<!--                                </button>-->
+<!--                            </h2>-->
+<!--                            <div id="collapsePartenaire" class="accordion-collapse collapse">-->
+<!--                                <div class="accordion-body">-->
+<!--                                    <p>Rejoignez notre réseau de partenaires engagés.</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Bloc 4 : Faire un don &ndash;&gt;-->
+<!--        <div class="col-12 col-md-6">-->
+<!--            <div class="card border-danger">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title text-danger">❤️ Faire un don</h5>-->
+<!--                    <div class="accordion" id="accordionDon">-->
+<!--                        <div class="accordion-item">-->
+<!--                            <h2 class="accordion-header" id="headingDon">-->
+<!--                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDon">-->
+<!--                                    En savoir plus-->
+<!--                                </button>-->
+<!--                            </h2>-->
+<!--                            <div id="collapseDon" class="accordion-collapse collapse">-->
+<!--                                <div class="accordion-body">-->
+<!--                                    <p>Contribuez à nos actions en soutenant financièrement notre mission.</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <!-- Bloc 3 : Partenaire -->
+        <div class="col-12 col-md-6">
+            <div class="card border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">🤝 Devenir partenaire</h5>
+                    <div class="accordion" id="accordionPartenaire">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingPartenaire">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePartenaire">
+                                    En savoir plus
+                                </button>
+                            </h2>
+                            <div id="collapsePartenaire" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <p>Rejoignez notre réseau de partenaires engagés pour soutenir des projets concrets en éducation, santé et égalité.</p>
+                                    <ul>
+                                        <li>👥 Entreprises, institutions, fondations : collaborez avec nous.</li>
+                                        <li>📦 Soutien logistique ou matériel bienvenu.</li>
+                                        <li>💬 Visibilité sur nos supports de communication.</li>
+                                        <li>📨 <a th:href="@{/contact}">Contactez-nous</a> pour en discuter.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloc 4 : Faire un don -->
+        <div class="col-12 col-md-6">
+            <div class="card border-danger">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">❤️ Faire un don</h5>
+                    <div class="accordion" id="accordionDon">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingDon">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDon">
+                                    En savoir plus
+                                </button>
+                            </h2>
+                            <div id="collapseDon" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <p>Contribuez à nos actions en soutenant financièrement notre mission.</p>
+                                    <ul>
+                                        <li>💳 Don ponctuel ou régulier via notre formulaire sécurisé.</li>
+                                        <li>📄 Reçu fiscal disponible pour chaque don.</li>
+                                        <li>🎯 Vos dons financent directement nos ateliers et distributions.</li>
+                                        <li>🔗 <a th:href="@{/don}">Accéder à la page de don</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

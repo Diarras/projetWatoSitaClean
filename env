@@ -1,0 +1,17 @@
+# Base de données PostgreSQL (Render)
+DATABASE_URL=jdbc:postgresql://dpg-d2ec6b2dbo4c7389bcs0-a.oregon-postgres.render.com:5432/projetwatosita
+DATABASE_USERNAME=projetwatosita_user
+DATABASE_PASSWORD=z8V9OcKjiaC7uKctpTuyu9jij6RyMHjx
+
+# Sécurité Spring
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
+
+# Stripe
+STRIPE_SECRET_KEY=sk_test_51RuIOQBpsBMBBcfOe9K7cbeW4RC7JoUXw6eAwQu1KTFgPMahsYiUnJ5MAv7DPTvuaxU9j0MpuWUYtTxlqEPA729n00mR583xZ3
+STRIPE_PUBLIC_KEY=pk_test_51RuIOQBpsBMBBcfO2Ln8e3Mfvzxw8Z2YMcHH5dNhsv0PhuBOq3j0s41HtyiSYjnzIh89nWEmPqdHh9nKettJETNB00DBbxAGFr
+STRIPE_WEBHOOK_SECRET=whsec_taCleWebhookIci
+
+# Mail
+MAIL_USERNAME=ton.email@gmail.com
+MAIL_PASSWORD=tonMotDePasseApp

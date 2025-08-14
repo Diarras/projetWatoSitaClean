@@ -1,0 +1,21 @@
+<!-- src/main/resources/templates/fragments/header1.html -->
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <header1>
+        <h1></h1>
+        <nav>
+            <ul>
+<!--                <a class="nav-link" th:href="@{/informations-generales}">Accueil</a>-->
+
+                <li><a th:href="@{/accueil}">Accueil</a></li>
+                <li><a th:href="@{/a-propos}">A propos</a></li>
+                <li><a th:href="@{/evenements}">Evènements</a></li>
+                <li><a th:href="@{/ressources_et_documentations}">Ressources et documentations</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
+                <li> <a sec:authorize="!isAuthenticated()" class="btn btn-outline-primary" th:href="@{/login}">Connexion</a><li>
+
+            </ul>
+        </nav>
+
+    </header1>
+</div>
+

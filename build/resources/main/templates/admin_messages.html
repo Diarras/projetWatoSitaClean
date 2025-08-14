@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages reçus</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.5em;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .pagination {
+            margin-top: 1em;
+        }
+        .pagination a {
+            margin: 0 5px;
+            text-decoration: none;
+        }
+        .search-form {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+<h1>Messages reçus</h1>
+
+<form class="search-form" th:action="@{/admin/messages}" method="get">
+    <input type="text" name="query" th:value="${query}" placeholder="Rechercher par nom ou sujet" />
+    <button type="submit">Rechercher</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            <a th:href="@{/admin/messages(sortBy='nom', direction=${direction == 'asc' ? 'desc' : 'asc'}, query=${query})}">Nom</a>
+        </th>
+        <th>Sujet</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="message : ${messages.content}">
+        <td th:text="${message.nom}">Nom</td>
+        <td th:text="${message.sujet}">Sujet</td>
+        <td th:text="${message.message}">Message</td>
+        <td th:text="${#temporals.format(message.date, 'dd/MM/yyyy HH:mm')}">Date</td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span th:if="${messages.hasPrevious()}">
+        <a th:href="@{/admin/messages(page=${messages.number - 1}, query=${query}, sortBy=${sortBy}, direction=${direction})}">Précédent</a>
+    </span>
+    <span th:each="i : ${#numbers.sequence(0, messages.totalPages - 1)}">
+        <a th:href="@{/admin/messages(page=${i}, query=${query}, sortBy=${sortBy}, direction=${direction})}"
+           th:text="${i + 1}"
+           th:classappend="${i == messages.number} ? 'active' : ''">Page</a>
+    </span>
+    <span th:if="${messages.hasNext()}">
+        <a th:href="@{/admin/messages(page=${messages.number + 1}, query=${query}, sortBy=${sortBy}, direction=${direction})}">Suivant</a>
+    </span>
+</div>
+</body>
+</html>

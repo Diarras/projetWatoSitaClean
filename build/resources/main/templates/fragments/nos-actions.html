@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="~{base :: base(~{::title}, ~{::section})}">
+<title>Nos Actions</title>
+<section>
+    <h2>Nos Actions</h2>
+    <ul>
+        <li>Éducation</li>
+        <li>Santé</li>
+        <li>Égalité</li>
+        <li><a th:href="@{/don}">Faire un don</a></li>
+    </ul>
+</section>
+</html>

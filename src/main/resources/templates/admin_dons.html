@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dons reçus</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+        th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .pagination { margin-top: 1em; }
+        .pagination a { margin: 0 5px; text-decoration: none; }
+        .search-form { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+<h1>Dons reçus</h1>
+
+<form class="search-form" th:action="@{/admin/dons}" method="get">
+    <input type="text" name="query" th:value="${query}" placeholder="Rechercher par nom ou email" />
+    <button type="submit">Rechercher</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th><a th:href="@{/admin/dons(sortBy='nom', direction=${direction == 'asc' ? 'desc' : 'asc'}, query=${query})}">Nom</a></th>
+        <th>Email</th>
+        <th>Montant</th>
+        <th>Type</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="don : ${dons.content}">
+        <td th:text="${don.nom}">Nom</td>
+        <td th:text="${don.email}">Email</td>
+        <td th:text="${don.montant}">Montant</td>
+        <td th:text="${don.typeDon}">Type</td>
+        <td th:text="${#dates.format(don.dateDon, 'dd/MM/yyyy HH:mm')}">Date</td>
+        <td>
+            <a th:href="@{/admin/dons/pdf/{id}(id=${don.id})}">Télécharger PDF</a> |
+            <form th:action="@{/admin/dons/renvoyer/{id}(id=${don.id})}" method="post" style="display:inline;">
+                <button type="submit">Renvoyer</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span th:if="${dons.hasPrevious()}">
+        <a th:href="@{/admin/dons(page=${dons.number - 1}, query=${query}, sortBy=${sortBy}, direction=${direction})}">Précédent</a>
+    </span>
+    <span th:each="i : ${#numbers.sequence(0, dons.totalPages - 1)}">
+        <a th:href="@{/admin/dons(page=${i}, query=${query}, sortBy=${sortBy}, direction=${direction})}"
+           th:text="${i + 1}"
+           th:classappend="${i == dons.number} ? 'active' : ''">Page</a>
+    </span>
+    <span th:if="${dons.hasNext()}">
+        <a th:href="@{/admin/dons(page=${dons.number + 1}, query=${query}, sortBy=${sortBy}, direction=${direction})}">Suivant</a>
+    </span>
+</div>
+</body>
+</html>

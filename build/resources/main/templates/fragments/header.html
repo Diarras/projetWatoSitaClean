@@ -1,0 +1,41 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/accueil}">
+        <img src="/images/logo.png" alt="Logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" th:href="@{/accueil}">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/a-propos}">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/evenements}">Évènements</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="actionsDropdown" role="button" data-bs-toggle="dropdown">
+              Nos Actions
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" th:href="@{/nos-actions/education}">Éducation</a></li>
+              <li><a class="dropdown-item" th:href="@{/nos-actions/sante}">Santé</a></li>
+              <li><a class="dropdown-item" th:href="@{/nos-actions/egalite}">Égalité</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="actusDropdown" role="button" data-bs-toggle="dropdown">
+              Actualités
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" th:href="@{/actualites/interviews}">Interviews</a></li>
+              <li><a class="dropdown-item" th:href="@{/actualites/portraits}">Portraits</a></li>
+              <li><a class="dropdown-item" th:href="@{/actualites/bilans}">Bilans</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/don}">Faire un don</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

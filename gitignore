@@ -1,0 +1,26 @@
+# Fichiers sensibles
+.env
+application.properties
+
+# Fichiers compilés
+*.class
+
+# Répertoires de build
+/build/
+/target/
+
+# Fichiers jar lourds
+*.jar
+
+# Fichiers de log
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers IDE
+*.iml
+.idea/
+*.swp
+.vscode/
