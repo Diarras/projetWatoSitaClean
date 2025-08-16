@@ -1,26 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>À propos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 0;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-<main class="container my-5">
+
+<main class="container mt-5 mb-0">
     <h1>À propos de l'association</h1>
     <p>Notre association œuvre depuis plusieurs années pour l'inclusion, l'éducation et la santé des populations vulnérables.</p>
+
     <h2>Historique</h2>
     <p>Fondée en 2010, notre association a débuté avec des actions locales dans les quartiers défavorisés.</p>
+
     <h2>Objectifs</h2>
     <p>Promouvoir l'accès à l'éducation, la santé et l'égalité des chances pour tous.</p>
+
     <h2>Équipe</h2>
     <p>Une équipe pluridisciplinaire composée de bénévoles, professionnels de santé, éducateurs et coordinateurs.</p>
+
     <h2>Lieux d’intervention</h2>
     <p>Nous intervenons dans plusieurs régions rurales et urbaines à travers le pays.</p>
+
     <h2>Partenaires</h2>
     <p>Nous collaborons avec des ONG, des institutions publiques et des entreprises engagées.</p>
 </main>
+
 <div th:replace="fragments/footer :: footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
