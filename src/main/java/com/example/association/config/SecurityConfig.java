@@ -33,7 +33,18 @@ public class SecurityConfig {
                                 "/js/**",
                                 "/images/**",
                                 "/",
-                                "/accueil"
+                                "/accueil/**",
+                                "/education/**",
+                                "/sante/**",
+                                "/egalite/**",
+                                "/faire-un-don/**",
+                                "/actualites/**",
+                                "/interviews/**",
+                                "/portraits/**",
+                                "/bilans-ateliers/**",
+                                "/devenir-partenaire/**",
+                                "/apropos/**"
+
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
